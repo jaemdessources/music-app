@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+  color: rgb(54, 54, 54);
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+h3,
+h4 {
+  font-weight: 400;
+  color: rgb(100, 100, 100);
+}
+
+.player {
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.time-control {
+  width: 50%;
+  display: flex;
+}
+.time-control input {
+  width: 100%;
+  padding: 1rem 0;
+  cursor: pointer;
+}
+.time-control p {
+  padding: 1rem;
+}
+
+.play-control {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.play-control svg {
+  cursor: pointer;
+}
+
+.song-container {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.song-container img {
+  width: 20%;
+  border-radius: 50%;
+}
+.song-container h2 {
+  padding: 3rem 1rem 1rem 1rem;
+}
+.song-container h3 {
+  font-size: 1rem;
+}
+
+.library {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20rem;
+  height: 100%;
+  background: lightcyan;
+  box-shadow: 2px 2px 50px gray;
+  overflow: scroll;
+  transform: translateX(-100%);
+  transition: all 0.5s ease;
+}
+.library h2 {
+  padding: 2rem;
+}
+
+.library-song {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 1rem 2rem 1rem 2rem;
+}
+.library-song img {
+  width: 30%;
+}
+.library-song:hover {
+  background: rgba(116, 114, 175, 0.5);
+}
+
+.song-description {
+  padding-left: 1rem;
+}
+.song-description h3 {
+  font-size: 1rem;
+}
+.song-description h4 {
+  font-size: 0.7rem;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(155, 155, 155, 0.5);
+}
+
+*::-webkit-scrollbar {
+  width: 35px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(155, 155, 155, 0.5);
+  border-radius: 20px;
+  border: transparent;
+}
+
+.selected {
+  background: rgba(116, 114, 175, 0.5);
+}
+
+.active-library {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+nav {
+  min-height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+nav button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border: 2px solid rgb(65, 65, 65);
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+nav button:hover {
+  background: rgb(65, 65, 65);
+  color: white;
+}/*# sourceMappingURL=app.css.map */
