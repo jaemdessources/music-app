@@ -20,6 +20,14 @@ h4 {
   color: rgb(100, 100, 100);
 }
 
+.App {
+  transition: all 0.5s ease;
+}
+
+.library-active {
+  margin-right: 10%;
+}
+
 .player {
   min-height: 20vh;
   display: flex;
@@ -31,6 +39,7 @@ h4 {
 .time-control {
   width: 50%;
   display: flex;
+  align-items: center;
 }
 .time-control input {
   width: 100%;
@@ -52,6 +61,44 @@ h4 {
   cursor: pointer;
 }
 
+.track {
+  width: 100%;
+  height: 1rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.animate-track {
+  background: rgb(204, 204, 204);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(0%);
+  padding: 1rem;
+  pointer-events: none;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .time-control {
+    width: 90%;
+  }
+  .play-control {
+    width: 80%;
+  }
+}
 .song-container {
   min-height: 60vh;
   display: flex;
@@ -62,6 +109,12 @@ h4 {
 .song-container img {
   width: 20%;
   border-radius: 50%;
+  transition: all ease;
+}
+.song-container img.rotating {
+  -webkit-animation: rotation 20s linear infinite;
+          animation: rotation 20s linear infinite;
+  transition: all ease;
 }
 .song-container h2 {
   padding: 3rem 1rem 1rem 1rem;
@@ -70,16 +123,37 @@ h4 {
   font-size: 1rem;
 }
 
+@media screen and (max-width: 768px) {
+  .song-container img {
+    width: 60%;
+  }
+}
+@-webkit-keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .library {
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   width: 20rem;
   height: 100%;
   background: lightcyan;
   box-shadow: 2px 2px 50px gray;
   overflow: scroll;
-  transform: translateX(-100%);
+  transform: translateX(100%);
   transition: all 0.5s ease;
 }
 .library h2 {
@@ -91,12 +165,13 @@ h4 {
   align-items: center;
   cursor: pointer;
   padding: 1rem 2rem 1rem 2rem;
+  transition: background 0.4s ease;
 }
 .library-song img {
   width: 30%;
 }
 .library-song:hover {
-  background: rgba(116, 114, 175, 0.5);
+  background: rgba(116, 114, 175, 0.2);
 }
 
 .song-description {
@@ -137,6 +212,11 @@ h4 {
   opacity: 1;
 }
 
+@media screen and (max-width: 768px) {
+  .library {
+    width: 100%;
+  }
+}
 nav {
   min-height: 10vh;
   display: flex;
@@ -154,4 +234,10 @@ nav button {
 nav button:hover {
   background: rgb(65, 65, 65);
   color: white;
+}
+
+@media screen and (max-width: 768px) {
+  nav button {
+    z-index: 10;
+  }
 }/*# sourceMappingURL=app.css.map */
