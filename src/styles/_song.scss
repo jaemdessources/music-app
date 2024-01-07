@@ -9,6 +9,7 @@
     width: 20%;
     border-radius: 50%;
     transition: all ease;
+    -webkit-user-drag: none;
     &.rotating {
       animation: rotation 20s linear infinite;
       transition: all ease;
